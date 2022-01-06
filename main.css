@@ -1,0 +1,45 @@
+html, body {overflow-x: hidden;}
+
+a, p, option {
+   font-family: Oswald;
+   font-size: 20px;
+}
+
+.appear {display: inline-block;}
+
+.full-width-bar {
+   margin: 0 -9999rem;
+   /* add back negative margin value */
+   padding: 0.25rem 9999rem;
+   background: rgb(0, 0, 0);
+ }
+
+.top_header {
+   position: absolute;
+   display: block;
+}
+
+.contact_img {
+   position: absolute;
+   bottom: 0;
+   right: 50px;
+}
+
+.main_fields {
+   position: relative;
+   display: block;
+   /*left: 412px;*/
+   margin-top: 140px;
+   padding: 10px;
+}
+
+.userInput p, .userInput2 p, .userInput3 p, .userInput4 p, .userInput5 p {
+   width: 250px;
+}
+
+.hidden, .hidden2, .hidden3, .hidden4, .hidden5 {
+   display: none;
+   min-width: 160px;
+}
+
+.show {display: inline-block;}
