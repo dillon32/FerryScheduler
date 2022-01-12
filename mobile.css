@@ -10,6 +10,7 @@ a, p, option {
 
 .d-flex {
     min-height: 100vh;
+    max-width: 100vw;
     position: sticky;
     z-index: 1;
     background: #ffffff;
@@ -25,6 +26,7 @@ a, p, option {
     display: grid;
     padding: 15px;
 }
+
 .full-width-bar {
    margin: 0 -9999rem;
    /* add back negative margin value */
@@ -36,8 +38,14 @@ a, p, option {
    position: absolute;
    display: block;
    height: 100px;
+   align-self: center;
 }
 
+.bottom_header {
+   position: absolute;
+   display: block;
+   height: 100px;
+}
 .contact_img {
    position: absolute;
    bottom: 0;
