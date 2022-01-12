@@ -37,6 +37,8 @@ a, p, option {
    position: absolute;
    display: block;
    height: 100px;
+   margin-left: 0;
+   margin-right: 0;
 }
 
 .bottom_header {
