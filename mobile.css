@@ -37,8 +37,9 @@ a, p, option {
    position: absolute;
    display: block;
    height: 100px;
-   margin-left: 0;
-   margin-right: 0;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 .bottom_header {
