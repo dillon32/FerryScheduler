@@ -13,6 +13,7 @@ a, p, option {
     position: sticky;
     z-index: 1;
     background: #ffffff;
+    align-items: center;
 }
 
 .footer {
@@ -30,6 +31,7 @@ a, p, option {
    /* add back negative margin value */
    padding: 0.25rem 9999rem;
    background: rgb(0, 0, 0);
+   align-items: center;
  }
 
 .top_header {
@@ -47,6 +49,7 @@ a, p, option {
 .main_fields {
    position: relative;
    display: block;
+   align-items: center;
    /*left: 412px;*/
    margin-top: 140px;
    padding: 10px;
