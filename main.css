@@ -19,6 +19,10 @@ a, p, option {
    display: block;
 }
 
+.nav-item {
+   z-index: 10;
+}
+
 .contact_img {
    position: absolute;
    bottom: 0;
