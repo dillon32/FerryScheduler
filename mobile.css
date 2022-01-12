@@ -10,7 +10,6 @@ a, p, option {
 
 .d-flex {
     min-height: 100vh;
-    max-width: 100vw;
     position: sticky;
     z-index: 1;
     background: #ffffff;
@@ -38,7 +37,6 @@ a, p, option {
    position: absolute;
    display: block;
    height: 100px;
-   align-self: center;
 }
 
 .bottom_header {
