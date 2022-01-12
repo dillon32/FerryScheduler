@@ -15,6 +15,9 @@ a, p, option {
     background: #ffffff;
 }
 
+.header {
+   margin-left: 50px; 
+}
 .footer {
     position: sticky;
     bottom: 0;
