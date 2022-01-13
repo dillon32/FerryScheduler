@@ -2,8 +2,8 @@ html, body {overflow-x: hidden;}
 
 a, p, option {
    font-family: Oswald;
-   font-size: 16px;
-   margin-top: 8px;
+   font-size: 20px;
+   margin-top: 16px;
 }
 
 .appear {display: inline-block;}
