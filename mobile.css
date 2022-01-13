@@ -16,7 +16,7 @@ a, p, option {
 }
 
 .header {
-   margin-left: 50px; 
+   left: 100px; 
 }
 .footer {
     position: sticky;
