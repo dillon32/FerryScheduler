@@ -9,7 +9,9 @@ var userTime;
 //getData()
 
 async function getMTime() {
-        
+        const response = await fetch("militaryTime.csv");
+        const data = await response.text();
+
         var selectedTime = "";
 
         if(button == "arriving") {
@@ -21,8 +23,6 @@ async function getMTime() {
         }
         console.log(selectedTime);
         console.log("We're in getTime");
-        const response = await fetch("militaryTime.csv");
-        const data = await response.text();
         console.log(data);
         var arr = createArray(2);
 
