@@ -192,7 +192,9 @@ function createEastArrive() {
             aRow = i;
         }
     }
-
+    console.log("end for loop")
+    console.log(finalFerryTimes)
+    
     var finalTrainArriveTimes = [];
     var finalTrainDepartTimes = [];
     for(var i = 0; i < finalFerryTimes.length; i++) {
@@ -360,6 +362,7 @@ function createWestDepart() {
     } // end loops to fill finalTrainTimes & finalSchedules
 
     var e = document.getElementById("loader");
+    console.log(e)
     e.classList.toggle('hidden');
 
     var element = document.getElementById("scheduleDisplay");
