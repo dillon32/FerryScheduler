@@ -9,8 +9,7 @@ var userTime;
 
 async function getMTime() {
     console.log("HIT getMTime");
-        //const response = await fetch("militaryTime.csv");
-    fetch("militaryTime.csv").then( (response) => {
+        const response = await fetch("militaryTime.csv");
         const data = await response.text();
 
         var selectedTime = "";
@@ -48,7 +47,6 @@ async function getMTime() {
         } else {
             createWestDepart();
         }
-    });
 }
 
 async function loadLIRR(dayOfWeek) {
