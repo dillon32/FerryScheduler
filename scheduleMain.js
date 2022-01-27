@@ -57,8 +57,6 @@ async function loadLIRR(dayOfWeek) {
             const response = await fetch(path);
             const data = await response.text();
             const rows = data.split('\r\n');
-            const rows2 = rows.split('\n');
-            console.log(rows2);
             for(let i = 0; i < rows.length; i++) {
                 LIRRcsv[i] = rows[i].split(',');
             }
@@ -93,6 +91,8 @@ async function loadFerry() {
             console.log(data);
             const rows = data.split('\r\n');
             console.log(rows)
+            const rows2 = rows.split('\n');
+            console.log(rows2);
             for(let i = 0; i < rows.length; i++) {
                 Ferrycsv[i] = rows[i].split(',');
             }
