@@ -52,10 +52,12 @@ async function getMTime() {
 }
 
 async function loadLIRR(dayOfWeek) {
+    console.log("Hit loadLIRR")
         if(dayOfWeek == "Sunday" || dayOfWeek == "Saturday") {
             var path = direction + "LIRRWeekend.csv";
             const response = await fetch(path);
             const data = await response.text();
+            console.log(data);
             const rows = data.split('\r\n');
             const rows2 = rows.split('\n')
             for(let i = 0; i < rows2.length; i++) {
@@ -182,6 +184,7 @@ function createEastArrive() {
 
     var dRow, aRow;
     console.log("Setting dRow, aRow. origin: " + origin);
+    console.log(LIRRcsv)
     for(var  i = 0; i < LIRRcsv.length; i++) {
         if(LIRRcsv[i][0] == origin) {
             dRow = i;
