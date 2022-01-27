@@ -85,6 +85,7 @@ async function loadFerry() {
         var strDestination = e.options[e.selectedIndex].text;
 
         if(direction == "east") {
+            console.log("hit east");
             const response = await fetch("to" + strDestination + ".csv");
             const data = await response.text();
             const rows = data.split('\r\n');
@@ -98,8 +99,8 @@ async function loadFerry() {
             for(let i = 0; i < rows.length; i++) {
                 Ferrycsv[i] = rows[i].split(',');
             }
-
         }
+        console.log(Ferrycsv)
     }
 
 function createArray(length) {
