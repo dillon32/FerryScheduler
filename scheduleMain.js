@@ -27,12 +27,13 @@ async function getMTime() {
         var arr = createArray(2);
 
         const rows = data.split('\r\n');
+        const rows2 = data.split('\n');
         console.log("Selected time: ", selectedTime)
-        for(let i = 0; i < rows.length; i++) {
-            arr[i] = rows[i].split(',');
+        for(let i = 0; i < rows2.length; i++) {
+            arr[i] = rows2[i].split(',');
             console.log("arr line:", arr[i]);
         }
-        for(let i = 0; i < rows.length; i++) {
+        for(let i = 0; i < rows2.length; i++) {
             if(arr[i][0] == selectedTime) {
                 console.log("hit if check")
                 userTime = arr[i][1];
@@ -150,6 +151,7 @@ function createEastArrive() {
     var finalSchedules = [];
 
     var fDate = new Date();
+    console.log(userTime)
     fDate.setHours(userTime.substring(0,2));
     fDate.setMinutes(userTime.substring(3,5));
 
