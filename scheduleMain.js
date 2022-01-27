@@ -93,8 +93,9 @@ async function loadFerry() {
             console.log(rows)
             const rows2 = rows[0].split('\n');
             console.log(rows2);
-            for(let i = 0; i < rows.length; i++) {
+            for(let i = 0; i < rows2.length; i++) {
                 Ferrycsv[i] = rows2[i].split(',');
+                console.log(Ferrycsv[i])
             }
         } else {
             const response = await fetch("from" + strDestination + ".csv");
