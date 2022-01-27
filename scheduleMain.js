@@ -48,7 +48,7 @@ async function getMTime() {
         } else {
             createWestDepart();
         }
-    })
+    });
 }
 
 async function loadLIRR(dayOfWeek) {
