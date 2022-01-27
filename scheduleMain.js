@@ -6,10 +6,11 @@ var button = "";
 var LIRRcsv = createArray(2);
 var Ferrycsv = createArray(2);
 var userTime;
-//getData()
 
 async function getMTime() {
-        const response = await fetch("militaryTime.csv");
+    console.log("HIT getMTime");
+        //const response = await fetch("militaryTime.csv");
+    fetch("militaryTime.csv").then( (response) => {
         const data = await response.text();
 
         var selectedTime = "";
@@ -47,7 +48,8 @@ async function getMTime() {
         } else {
             createWestDepart();
         }
-    }
+    })
+}
 
 async function loadLIRR(dayOfWeek) {
         if(dayOfWeek == "Sunday" || dayOfWeek == "Saturday") {
