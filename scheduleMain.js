@@ -57,8 +57,9 @@ async function loadLIRR(dayOfWeek) {
             const response = await fetch(path);
             const data = await response.text();
             const rows = data.split('\r\n');
-            for(let i = 0; i < rows.length; i++) {
-                LIRRcsv[i] = rows[i].split(',');
+            const rows2 = rows.split('\n')
+            for(let i = 0; i < rows2.length; i++) {
+                LIRRcsv[i] = rows2[i].split(',');
             }
 
         } else if(dayOfWeek == "Friday") {
@@ -66,16 +67,18 @@ async function loadLIRR(dayOfWeek) {
             const response = await fetch(path);
             const data = await response.text();
             const rows = data.split('\r\n');
-            for(let i = 0; i < rows.length; i++) {
-                LIRRcsv[i] = rows[i].split(',');
+            const rows2 = rows.split('\n')
+            for(let i = 0; i < rows2.length; i++) {
+                LIRRcsv[i] = rows2[i].split(',');
             }
         } else {
             var path = direction + "LIRRWeekday.csv";
             const response = await fetch(path);
             const data = await response.text();
             const rows = data.split('\r\n');
-            for(let i = 0; i < rows.length; i++) {
-                LIRRcsv[i] = rows[i].split(',');
+            const rows2 = rows.split('\n')
+            for(let i = 0; i < rows2.length; i++) {
+                LIRRcsv[i] = rows2[i].split(',');
             }
         }
     }
