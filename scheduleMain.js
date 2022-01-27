@@ -88,7 +88,9 @@ async function loadFerry() {
             console.log("hit east");
             const response = await fetch("to" + strDestination + ".csv");
             const data = await response.text();
+            console.log(data);
             const rows = data.split('\r\n');
+            console.log(rows)
             for(let i = 0; i < rows.length; i++) {
                 Ferrycsv[i] = rows[i].split(',');
             }
