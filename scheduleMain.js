@@ -59,7 +59,7 @@ async function loadLIRR(dayOfWeek) {
             const data = await response.text();
             console.log(data);
             const rows = data.split('\r\n');
-            const rows2 = rows.split('\n')
+            const rows2 = rows[0].split('\n')
             for(let i = 0; i < rows2.length; i++) {
                 LIRRcsv[i] = rows2[i].split(',');
             }
@@ -69,7 +69,7 @@ async function loadLIRR(dayOfWeek) {
             const response = await fetch(path);
             const data = await response.text();
             const rows = data.split('\r\n');
-            const rows2 = rows.split('\n')
+            const rows2 = rows[0].split('\n')
             for(let i = 0; i < rows2.length; i++) {
                 LIRRcsv[i] = rows2[i].split(',');
             }
@@ -78,7 +78,7 @@ async function loadLIRR(dayOfWeek) {
             const response = await fetch(path);
             const data = await response.text();
             const rows = data.split('\r\n');
-            const rows2 = rows.split('\n')
+            const rows2 = rows[0].split('\n')
             for(let i = 0; i < rows2.length; i++) {
                 LIRRcsv[i] = rows2[i].split(',');
             }
