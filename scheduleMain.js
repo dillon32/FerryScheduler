@@ -94,7 +94,7 @@ async function loadFerry() {
         } else {
             const response = await fetch("from" + strDestination + ".csv");
             const data = await response.text();
-            const rows = data.split('\n');
+            const rows = data.split('\r\n');
             for(let i = 0; i < rows.length; i++) {
                 Ferrycsv[i] = rows[i].split(',');
             }
