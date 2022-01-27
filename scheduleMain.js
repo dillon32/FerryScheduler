@@ -27,13 +27,14 @@ async function getMTime() {
         var arr = createArray(2);
 
         const rows = data.split('\r\n');
-        
+        console.log("Selected time: ", selectedTime)
         for(let i = 0; i < rows.length; i++) {
             arr[i] = rows[i].split(',');
             console.log("arr line:", arr[i]);
         }
         for(let i = 0; i < rows.length; i++) {
             if(arr[i][0] == selectedTime) {
+                console.log("hit if check")
                 userTime = arr[i][1];
             }
         }
@@ -152,7 +153,8 @@ function createEastArrive() {
         }
     }
     console.log("col: " + col);
-    for(var i = Ferrycsv.length - 1; i > 0; i--) {
+    console.log(Ferrycsv)
+    for(var i = (Ferrycsv.length - 1); i > 0; i--) {
         var temp = Ferrycsv[i][col];
         if(temp != undefined) {
         tempDate.setHours(temp.substring(0,2));
