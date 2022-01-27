@@ -5,7 +5,7 @@ var destination = "";
 var button = "";
 var LIRRcsv = createArray(2);
 var Ferrycsv = createArray(2);
-var userTime;
+var userTime = "";
 
 async function getMTime() {
     console.log("HIT getMTime");
@@ -30,6 +30,7 @@ async function getMTime() {
         
         for(let i = 0; i < rows.length; i++) {
             arr[i] = rows[i].split(',');
+            console.log("arr line:", arr[i]);
         }
         for(let i = 0; i < rows.length; i++) {
             if(arr[i][0] == selectedTime) {
