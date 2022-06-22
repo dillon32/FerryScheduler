@@ -187,6 +187,7 @@ function createEastArrive() {
 
     var dRow, aRow;
     console.log("Setting dRow, aRow. origin: " + origin);
+    //console.log(LIRRcsv)
     for(var  i = 0; i < LIRRcsv.length; i++) {
         if(LIRRcsv[i][0] == origin) {
             dRow = i;
@@ -212,7 +213,7 @@ function createEastArrive() {
 
         console.log("LIRRcsv len: " +  LIRRcsv[0].length);
         for(var j = LIRRcsv[0].length -1; j > 0; j--) {
-          var temp = LIRRcsv[17][j];
+          var temp = LIRRcsv[3][j];
           console.log("temp: "+ temp);
           tempDate.setHours(temp.substring(0,2));
           tempDate.setMinutes(temp.substring(3,5));
@@ -222,7 +223,7 @@ function createEastArrive() {
             finalTrainArriveTimes.push(LIRRcsv[aRow][j]);
             finalTrainDepartTimes.push(LIRRcsv[dRow][j]);
             console.log(LIRRcsv[1][j]);
-            console.log(LIRRcsv[17][j]);
+            console.log(LIRRcsv[3][j]);
 
             var schedule = new Schedule(LIRRcsv[dRow][j], LIRRcsv[aRow][j],
                 finalFerryTimes[i], document.getElementById("storeDate"), userTime);

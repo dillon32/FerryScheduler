@@ -257,7 +257,7 @@ function clearPage() {
         element7.appendChild(para);
     } else {
         var para = document.createElement("p");
-        var txt = document.createTextNode("Waiting for the ferry...");
+        var txt = document.createTextNode("");
         para.appendChild(txt);
         element7.style.display = "inline-block";
         para.style.position = "relative";
