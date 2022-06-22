@@ -163,7 +163,7 @@ function unfold3() {
 function unfold4(strDate) {
 
     var date = new Date(strDate);
-    var date2 = new Date("09/06/2021");
+    var date2 = new Date("09/06/2022");
     console.log(strDate);
     if(date.getTime() > date2.getTime()) {
         alert('You selected a time outside of the summer season.');
