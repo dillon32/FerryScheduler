@@ -45,7 +45,7 @@ async function getMTime() {
             createEastArrive();
         } else if(direction == "east" && button == "departing") {
             createEastDepart();
-        } else if(directoin == "west" && button == "arriving") {
+        } else if(direction == "west" && button == "arriving") {
             createWestArrive();
         } else {
             createWestDepart();
@@ -87,8 +87,9 @@ async function loadLIRR(dayOfWeek) {
     }
 
 async function loadFerry() {
-        var e = document.getElementById("destinations");
-        var strDestination = e.options[e.selectedIndex].text;
+
+    var e = document.getElementById("destinations");
+    var strDestination = e.options[e.selectedIndex].text;
 
         if(direction == "east") {
             console.log("hit east");
@@ -98,15 +99,19 @@ async function loadFerry() {
             const rows = data.split('\r\n');
             console.log(rows)
             const rows2 = rows[0].split('\n');
-            console.log(rows2);
+            //console.log(rows2);
             for(let i = 0; i < rows2.length; i++) {
                 Ferrycsv[i] = rows2[i].split(',');
                 console.log(Ferrycsv[i])
             }
         } else {
-            const response = await fetch("from" + strDestination + ".csv");
+            var e = document.getElementById("origins");
+            var strOrigins = e.options[e.selectedIndex].text;
+            const response = await fetch("from" + strOrigins + ".csv");
             const data = await response.text();
+            //console.log(data);
             const rows = data.split('\r\n');
+            //console.log(rows)
             for(let i = 0; i < rows.length; i++) {
                 Ferrycsv[i] = rows[i].split(',');
             }
@@ -187,7 +192,6 @@ function createEastArrive() {
 
     var dRow, aRow;
     console.log("Setting dRow, aRow. origin: " + origin);
-    //console.log(LIRRcsv)
     for(var  i = 0; i < LIRRcsv.length; i++) {
         if(LIRRcsv[i][0] == origin) {
             dRow = i;
@@ -276,13 +280,15 @@ function createEastArrive() {
     element.appendChild(br);
 
     }
-
+    element.style.marginTop = "-100px";
     element.classList.toggle("show");
 
-}
+} //end CreateWestArrive
 
 function createWestDepart() {
     console.log("Hit createWestDepart");
+    var e = document.getElementById("destinations");
+    var destination = e.options[e.selectedIndex].text;
 
     var finalFerryTimes = [];
     var finalSchedules = [];
@@ -303,6 +309,7 @@ function createWestDepart() {
     }
     console.log("col: " + col);
     for(var i = 1; i < Ferrycsv.length; i++) {
+        //console.log(Ferrycsv)
         var temp = Ferrycsv[i][col];
         if(temp != undefined) {
         tempDate.setHours(temp.substring(0,2));
@@ -312,7 +319,7 @@ function createWestDepart() {
         if(tempDate >= fDate) {
             var difference = fDate - tempDate;
             console.log("difference: " + difference);
-            if(difference < (91 * 60000)) {
+            if(-difference < (91 * 60000) && -difference >= 0) {
             finalFerryTimes.push(Ferrycsv[i][col]);
             }
         }
@@ -323,6 +330,7 @@ function createWestDepart() {
     //aRow = "arrive row", where the train should arrive
     var dRow, aRow;
     console.log("Setting dRow, aRow. depart: " + destination);
+    //console.log("LIRRcsv: ", LIRRcsv)
     for(var  i = 0; i < LIRRcsv.length; i++) {
         if(LIRRcsv[i][0] == "Sayville") {
             dRow = i;
@@ -330,9 +338,12 @@ function createWestDepart() {
             aRow = i;
         }
     }
-
+    console.log("destination: ", destination)
+    console.log("dRow: ", dRow)
+    console.log("aRow: ", aRow)
     var finalTrainArriveTimes = [];
     var finalTrainDepartTimes = [];
+    //console.log("finalFerryTimes: ", finalFerryTimes)
     for(var i = 0; i < finalFerryTimes.length; i++) {
         var fDate2 = new Date();
         fDate2.setHours(finalFerryTimes[i].substring(0,2));
@@ -343,16 +354,17 @@ function createWestDepart() {
         console.log(finalFerryTimes);
         fDate2.setTime(fDate2.getTime() + (30 * 60000));
         console.log("fdate2: " + fDate2.getHour + ":" + fDate2.getMinute);
-
+        console.log("LIRR row: ", LIRRcsv[dRow])
         console.log("LIRRcsv len: " +  LIRRcsv[0].length);
         for(var j = LIRRcsv[dRow].length -1; j > 0; j--) {
           var temp = LIRRcsv[dRow][j];
           console.log("temp: "+ temp);
           tempDate.setHours(temp.substring(0,2));
           tempDate.setMinutes(temp.substring(3,5));
+          console.log("fdate2: ", fDate2)
         if(tempDate >= fDate2) {
             var difference = tempDate - fDate2;
-            if(difference < (60 * 60000)) {
+            if(difference < (60 * 60000) && difference > 0) {
             finalTrainArriveTimes.push(LIRRcsv[aRow][j]);
             finalTrainDepartTimes.push(LIRRcsv[dRow][j]);
 
@@ -397,6 +409,7 @@ function createWestDepart() {
 
     }
 
+    element.style.marginTop = "-100px";
     element.classList.toggle("show");
 } //end createWestDepart()
 
@@ -519,6 +532,7 @@ function createEastDepart() {
 
     }
 
+    element.style.marginTop = "-100px";
     element.classList.toggle("show");
 } //end createEastDepart
 

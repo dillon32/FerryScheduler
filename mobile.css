@@ -10,7 +10,7 @@ a, p, option {
 
 .d-flex {
     min-height: 100vh;
-    position: sticky;
+    position: absolute;
     z-index: 1;
     background: #ffffff;
 }
@@ -59,6 +59,14 @@ a, p, option {
    /*left: 412px;*/
    margin-top: 140px;
    padding: 10px;
+}
+
+#ui-datepicker-div {
+   height: 300px;
+}
+
+table {
+   height: 250px !important;
 }
 
 .userInput p, .userInput2 p, .userInput3 p, .userInput4 p, .userInput5 p {
